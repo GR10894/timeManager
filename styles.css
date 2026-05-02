@@ -146,7 +146,7 @@ li {
 }
 
 .menuToggle {
-    display: inline-flex;
+    display: none;
     flex-direction: column;
     justify-content: space-between;
     width: 42px;
@@ -183,42 +183,43 @@ li {
 
 .navLinks {
     display: flex;
-    position: absolute;
-    top: calc(100% + 10px);
-    left: 50%;
-    transform: translateX(-50%);
-    width: min(320px, 92vw);
-    padding: 1rem;
-    background: rgba(34, 24, 28, 0.98);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 22px;
-    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
-    flex-direction: column;
-    gap: 0.75rem;
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    visibility: hidden;
-    pointer-events: none;
-    transition: max-height 0.35s ease, opacity 0.25s ease 0.05s, visibility 0.25s ease;
-}
-
-.nav.open .navLinks {
-    max-height: 320px;
+    position: static;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: auto;
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    flex-direction: row;
+    gap: 25px;
+    max-height: none;
     opacity: 1;
+    overflow: visible;
     visibility: visible;
     pointer-events: auto;
+    transition: none;
 }
 
 .navLinks li {
-    width: 100%;
+    width: auto;
 }
 
 .navLinks .navLink,
 .navLinks .btn {
-    width: 100%;
+    width: auto;
     display: inline-flex;
     justify-content: center;
+}
+
+.nav.open .navLinks {
+    display: flex;
+}
+
+.navLinks .navLink {
+    padding: 0;
 }
 
 .navLinks .navLink {
@@ -553,6 +554,10 @@ li {
         justify-content: space-between;
     }
 
+    .menuToggle {
+        display: inline-flex;
+    }
+
     .featuresSec {
         min-height: 100vh;
     }
@@ -560,9 +565,52 @@ li {
     .timerContainer {
         grid-template-columns: 1fr;
     }
+
+    .navLinks {
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 50%;
+        transform: translateX(-50%);
+        width: min(320px, 92vw);
+        padding: 1rem;
+        background: rgba(34, 24, 28, 0.98);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 22px;
+        box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
+        flex-direction: column;
+        gap: 0.75rem;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        visibility: hidden;
+        pointer-events: none;
+        transition: max-height 0.35s ease, opacity 0.25s ease 0.05s, visibility 0.25s ease;
+    }
+
+    .nav.open .navLinks {
+        max-height: 320px;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .navLinks li {
+        width: 100%;
+    }
+
+    .navLinks .navLink,
+    .navLinks .btn {
+        width: 100%;
+        display: inline-flex;
+        justify-content: center;
+    }
 }
 
 @media (min-width: 981px) {
+    .nav {
+        flex-wrap: nowrap;
+    }
+
     .menuToggle {
         display: none;
     }
@@ -588,6 +636,10 @@ li {
 
     .nav.open .navLinks {
         display: flex;
+    }
+
+    .navLinks li {
+        width: auto;
     }
 
     .navLinks .navLink,
