@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+
+    <!-- link stylesheet -->
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="nav">
+        <h2 class="logo">GR10894.</h2>
+        <ul class="navLinks">
+            <li><a href="../index.html" class="navLink">Home</a></li>
+            <li><a href="mailto:rithwinsudevpn@gmail.com" class="navLink">Email</a></li>
+            <li><a href="https://github.com/GR10894" class="navLink">Github</a></li>
+            <li><a href="contact form/index.html" class="btn btnActive">Contact</a></li>
+        </ul>
+    </div>
+    <div class="content-container">
+        <form action="https://api.web3forms.com/submit" method="POST" class="content-left">
+            <div class="contact-left-tittle">
+                <h2>Message Me</h2>
+                <hr>
+            </div>
+            <input type="hidden" name="access_key" value="d1d9b83e-90fd-476b-b7bb-cf5bd363bd0b">
+            <input type="text" name="name" placeholder="Your Name..." class="contact-inputs" required>
+            <input type="email" name="email" placeholder="Your Email..." class="contact-inputs" required>
+            <textarea name="message" placeholder="Your Message..." class="contact-inputs" required></textarea>
+            <button type="submit">Submit <img src="arrow_icon.png" alt=""></button>
+        </form>
+        <div class="content-right">
+            <img src="right_img.png" alt="">
+        </div>
+    </div>
+</body>
+</html>
