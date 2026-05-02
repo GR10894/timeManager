@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Manager</title>
+
+    <!-- Favicon Link  -->
+    <link rel="icon" type="image/x-icon" href="images/Favicon.png">
+
+    <!-- Stylesheet Link -->
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+    <!-- loader -->
+    <div id="loader">
+        <img src="images/Loader.gif" alt="Loading..." />
+    </div>
+
+    <!-- Navbar Section -->
+    <div class="nav">
+        <h2 class="logo">GR10894.</h2>
+        <button class="menuToggle" aria-expanded="false" aria-label="Open navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="navLinks" aria-hidden="true">
+            <li><a href="#" class="navLink" style="color: var(--accent-color);">Home</a></li>
+            <li><a href="mailto:rithwinsudevpn@gmail.com" class="navLink">Email</a></li>
+            <li><a href="https://github.com/GR10894" class="navLink">Github</a></li>
+            <li><a href="contact form/index.html" class="btn">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="heroSec">
+        <div class="heroLeft">
+            <h1>Time Manager</h1>
+            <div class="ln"></div>
+            <h3>Effortlessly manage your time and boost <br>productivity with our intuitive time management <br> app.</h3>
+            <div class="gap"></div>
+            <a href="#whySec" class="btn">Learn More</a>
+        </div>
+        <img src="images/heroImg-removebg-preview.png" class="heroRight">
+    </div>
+
+    <!-- Back to top button -->
+    <button id="scrollTopBtn">↑</button>
+    
+    <!-- why Section -->
+    <div class="whySec heroSec" id="whySec">
+        <img src="images/whySec.webp" class="heroRight" style="border-left: none; border-right: 4px solid var(--accent-color);">
+        <div class="heroLeft">
+            <h1>Why Choose Us?</h1>
+            <div class="ln"></div>
+            <h3>Time Manager is a powerful time management app designed to help you stay organized, focused, and productive. With its intuitive interface and robust features, Time Manager makes it easy to manage your tasks, set reminders, and track your progress.</h3>
+            <div class="gap"></div>
+            <a href="#featuresSec" class="btn">Features</a>
+        </div>
+    </div>
+
+    <!-- Time Manger Section -->
+    <div class="featuresSec" id="featuresSec">
+        <h1>Time Manager Features</h1>
+        <div class="ln"></div>
+        <div class="container">
+            <div class="group">
+                <div class="cards">
+                    <div class="num">1</div>
+                    <h2>Task Scheduling</h2>
+                </div>
+                <div class="cards">
+                    <div class="num">2</div>
+                    <h2>Focus Timer</h2>
+                </div>
+                <div class="cards">
+                    <div class="num">3</div>
+                    <h2>Progress Tracking</h2>
+                </div>
+                <div class="cards">
+                    <div class="num">4</div>
+                    <h2>Time Allocation</h2>
+                </div>
+                <div class="cards">
+                    <div class="num">5</div>
+                    <h2>Daily Insights</h2>
+                </div>
+                <div class="cards">
+                    <div class="num">6</div>
+                    <h2>Custom Alerts</h2>
+                </div>
+            </div>
+            <div aria-hidden class="group">
+                <div class="cards">
+                    <div class="num">1</div>
+                    <h2>Task Scheduling</h2>
+                </div>
+                <div class="cards">
+                    <div class="num">2</div>
+                    <h2>Focus Timer</h2>
+                </div>
+                <div class="cards">
+                    <div class="num">3</div>
+                    <h2>Progress Tracking</h2>
+                </div>
+                <div class="cards">
+                    <div class="num">4</div>
+                    <h2>Time Allocation</h2>
+                </div>
+                <div class="cards">
+                    <div class="num">5</div>
+                    <h2>Daily Insights</h2>
+                </div>
+                <div class="cards">
+                    <div class="num">6</div>
+                    <h2>Custom Alerts</h2>
+                </div>
+            </div>
+        </div>
+        <a href="#mainSec" class="btn">Get Started</a>
+    </div>
+
+    <!-- Main section  -->
+     <div class="mainSec" id="mainSec">
+        <h1>Time Manager App</h1>
+        <div class="ln"></div>
+        
+        <div class="timerContainer">
+            <div class="clockSection">
+                <h2>Current Time</h2>
+                <div class="clock" id="realTimeClock">00:00:00</div>
+            </div>
+            
+            <div class="setupSection">
+                <h2>Setup Your Tasks</h2>
+                
+                <div class="inputGroup">
+                    <label for="totalTime">Total Time Available (minutes):</label>
+                    <input type="number" id="totalTime" placeholder="Enter total time" min="1" value="60">
+                    <button onclick="initializeTasks()" class="btn">Set Total Time</button>
+                </div>
+
+                <div class="tasksInput">
+                    <label for="taskName">Task Name:</label>
+                    <input type="text" id="taskName" placeholder="Enter task name">
+                    <button onclick="addTask()" class="btn">Add Task</button>
+                </div>
+
+                <div id="tasksList" class="tasksList"></div>
+            </div>
+
+            <div class="timerSection">
+                <h2>Timer</h2>
+                <div class="timerDisplay" id="timerDisplay">00:00:00</div>
+                <div class="timerControls">
+                    <button onclick="startTimer()" class="btn">Start</button>
+                    <button onclick="pauseTimer()" class="btn">Pause</button>
+                    <button onclick="resetTimer()" class="btn">Reset</button>
+                </div>
+            </div>
+
+            <div class="progressSection">
+                <h2>Time Distribution</h2>
+                <div id="progressContainer" class="progressContainer"></div>
+            </div>
+        </div>
+     </div>
+
+    <!-- script link -->
+    <script src="loader.js"></script>
+    <script src="easterEgg.js"></script>
+    <script src="backToTopBtn.js"></script>
+    <script src="timeManager.js"></script>
+
+</body>
+</html>
